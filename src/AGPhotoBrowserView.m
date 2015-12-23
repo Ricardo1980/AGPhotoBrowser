@@ -121,6 +121,7 @@ const NSInteger AGPhotoBrowserThresholdToCenter = 150;
         UICollectionViewFlowLayout *layout = [[UICollectionViewFlowLayout alloc] init];
         layout.itemSize = screenBounds.size;
         layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.minimumLineSpacing = 0;
         
         _photoCollectionView = [[UICollectionView alloc] initWithFrame:screenBounds collectionViewLayout:layout];
         _photoCollectionView.dataSource = self;
