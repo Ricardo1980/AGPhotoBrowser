@@ -109,13 +109,20 @@
     return NO;
 }
 
-
 #pragma mark - Setters
 
-- (void)setCellImage:(UIImage *)cellImage
+- (void)setCellImage:(UIImage *)cellImage animated:(BOOL)animated
 {
-	[self.zoomableView setImage:cellImage];
-	
+    if (animated) {
+        self.zoomableView.alpha = 0.f;
+        [self.zoomableView setImage:cellImage];
+        [UIView animateWithDuration:0.3f animations:^{
+            self.zoomableView.alpha = 1.f;
+        }];
+    } else {
+        [self.zoomableView setImage:cellImage];
+    }
+
 	[self setNeedsUpdateConstraints];
 }
 
