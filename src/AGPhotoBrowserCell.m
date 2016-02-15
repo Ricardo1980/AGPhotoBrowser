@@ -111,6 +111,11 @@
 
 #pragma mark - Setters
 
+- (void)setCellImage:(UIImage *)cellImage
+{
+    [self setCellImage:cellImage animated:NO];
+}
+
 - (void)setCellImage:(UIImage *)cellImage animated:(BOOL)animated
 {
     if (animated) {
